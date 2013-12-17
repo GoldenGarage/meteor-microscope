@@ -1,0 +1,10 @@
+<template name="posts">
+  <div class="posts">
+    {{#each posts}}
+      {{> postItem}}
+    {{/each}}
+    {{#if hasMorePosts}}
+      <a class="load-more" href="{{nextPath}}">more ...</a>
+    {{/if}}
+  </div>
+</template>
