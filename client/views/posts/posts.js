@@ -1,18 +1,17 @@
 Template.posts.helpers({ 
 
     postsWithRank: function() 
-           { 
-               this.posts.rewind();
+    { 
+        this.posts.rewind();
 
-               return this.posts.map( function ( post, index, cursor ) { post._rank = index; return post; } );
-           }, 
+        return this.posts.map( function ( post, index, cursor ) { post._rank = index; return post; } );
+    }, 
 
     hasMorePosts: function() 
-           { 
-               this.posts.rewind();
-
-               return Router.current().limit &&
-                      ( Router.current().limit() == this.posts.fetch().length );
-           } 
+    { 
+        this.posts.rewind();
+        
+        return Router.current().limit() == this.posts.fetch().length;
+    } 
 
 });
